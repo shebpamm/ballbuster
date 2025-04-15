@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://xhgfep3yfrgj"]
+
+[ext_resource type="PackedScene" uid="uid://jthhs0gxs8u0" path="res://BowlingBall.glb" id="1_hn4ff"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="BowlingBall" parent="." instance=ExtResource("1_hn4ff")]

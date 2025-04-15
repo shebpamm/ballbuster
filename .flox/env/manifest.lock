@@ -1,0 +1,95 @@
+{
+  "lockfile-version": 1,
+  "manifest": {
+    "version": 1,
+    "install": {
+      "godot_4_3": {
+        "pkg-path": "godot_4_3",
+        "systems": [
+          "aarch64-linux",
+          "x86_64-linux"
+        ]
+      }
+    },
+    "hook": {},
+    "profile": {},
+    "options": {
+      "systems": [
+        "aarch64-darwin",
+        "aarch64-linux",
+        "x86_64-darwin",
+        "x86_64-linux"
+      ],
+      "allow": {
+        "licenses": []
+      },
+      "semver": {}
+    }
+  },
+  "packages": [
+    {
+      "attr_path": "godot_4_3",
+      "broken": false,
+      "derivation": "/nix/store/4445h5hwlrfsckfs2zfy4q9si5z9fm28-godot4-4.3-stable.drv",
+      "description": "Free and Open Source 2D and 3D game engine",
+      "install_id": "godot_4_3",
+      "license": "MIT",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=c8cd81426f45942bb2906d5ed2fe21d2f19d95b7",
+      "name": "godot4-4.3-stable",
+      "pname": "godot_4_3",
+      "rev": "c8cd81426f45942bb2906d5ed2fe21d2f19d95b7",
+      "rev_count": 780821,
+      "rev_date": "2025-04-08T07:41:42Z",
+      "scrape_date": "2025-04-10T01:27:39.056326Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "godot4-4.3-stable",
+      "outputs_to_install": [
+        "man",
+        "out"
+      ],
+      "outputs": {
+        "debug": "/nix/store/8am740j5vbwiz3g6fc3ydiw9p6k7ifb4-godot4-4.3-stable-debug",
+        "man": "/nix/store/g76wfqpaax0wmaiky78ldq8hb1w3ilai-godot4-4.3-stable-man",
+        "out": "/nix/store/83qiv3l1071q1ypzgp009h1vrvys1ckl-godot4-4.3-stable"
+      },
+      "system": "aarch64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "godot_4_3",
+      "broken": false,
+      "derivation": "/nix/store/ny0d6xld9fy8rd2mqkbzvyvsn2i1w4yi-godot4-4.3-stable.drv",
+      "description": "Free and Open Source 2D and 3D game engine",
+      "install_id": "godot_4_3",
+      "license": "MIT",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=c8cd81426f45942bb2906d5ed2fe21d2f19d95b7",
+      "name": "godot4-4.3-stable",
+      "pname": "godot_4_3",
+      "rev": "c8cd81426f45942bb2906d5ed2fe21d2f19d95b7",
+      "rev_count": 780821,
+      "rev_date": "2025-04-08T07:41:42Z",
+      "scrape_date": "2025-04-10T02:01:18.266452Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "godot4-4.3-stable",
+      "outputs_to_install": [
+        "man",
+        "out"
+      ],
+      "outputs": {
+        "debug": "/nix/store/b3dybcfz4l4gb8hib0gypzi0caam0yn8-godot4-4.3-stable-debug",
+        "man": "/nix/store/8bngqx0iq01xgjhp93mlb4l6bq4w37qw-godot4-4.3-stable-man",
+        "out": "/nix/store/7y6j4gs81dmnpzy1n6zwm7874gklwx37-godot4-4.3-stable"
+      },
+      "system": "x86_64-linux",
+      "group": "toplevel",
+      "priority": 5
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3rnsmran845a"]
+
+[ext_resource type="PackedScene" uid="uid://jthhs0gxs8u0" path="res://BowlingBall.glb" id="1_admdj"]
+
+[node name="BowlingBall" instance=ExtResource("1_admdj")]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="." index="1"]

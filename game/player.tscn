@@ -1,0 +1,78 @@
+[gd_scene load_steps=8 format=3 uid="uid://c8eovgi8jjx6u"]
+
+[ext_resource type="Script" path="res://controls.gd" id="1_r6piu"]
+[ext_resource type="PackedScene" uid="uid://xhgfep3yfrgj" path="res://ball.tscn" id="2_4ssrj"]
+[ext_resource type="PackedScene" uid="uid://par778bu2psy" path="res://bowler.glb" id="2_252pw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nrmu6"]
+font_size = 24
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ub00p"]
+height = 2.03823
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_an6ii"]
+lifetime_randomness = 0.07
+inherit_velocity_ratio = 0.024
+direction = Vector3(100, 100, 100)
+spread = 75.361
+flatness = 0.434
+initial_velocity_max = 5.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_v6bpm"]
+radius = 0.25
+height = 0.5
+radial_segments = 4
+rings = 1
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_r6piu")
+bowling_ball_scene = ExtResource("2_4ssrj")
+
+[node name="TwistPivot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.7, 0)
+
+[node name="PitchPivot" type="Node3D" parent="TwistPivot"]
+transform = Transform3D(1, 0, 0, 0, 0.85264, 0.522499, 0, -0.522499, 0.85264, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="TwistPivot/PitchPivot"]
+transform = Transform3D(1, 0, 0, 0, 0.970232, -0.242176, 0, 0.242176, 0.970232, -0.464031, 0, 5.2)
+current = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="VelocityLabel" type="Label" parent="CanvasLayer"]
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 431.0
+offset_bottom = 58.0
+
+[node name="crosshair" type="Label" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "+"
+label_settings = SubResource("LabelSettings_nrmu6")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(2.28, 0, 0, 0, 2.28, 0, 0, 0, 2.28, 0, 2.35911, 0)
+shape = SubResource("CapsuleShape3D_ub00p")
+
+[node name="Model" parent="." instance=ExtResource("2_252pw")]
+transform = Transform3D(-0.415, 0, -3.62805e-08, 0, 0.415, 0, 3.62805e-08, 0, -0.415, 0, 1.64, 0)
+
+[node name="SlideParticles" type="GPUParticles3D" parent="."]
+emitting = false
+amount = 32
+lifetime = 0.1
+process_material = SubResource("ParticleProcessMaterial_an6ii")
+draw_pass_1 = SubResource("SphereMesh_v6bpm")

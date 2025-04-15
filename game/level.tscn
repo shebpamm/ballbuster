@@ -1,0 +1,63 @@
+[gd_scene load_steps=11 format=3 uid="uid://bp75ym0wby5t2"]
+
+[ext_resource type="Texture2D" uid="uid://b74fuytii5l04" path="res://textures/herringbone_brick_02_diff_4k.jpg" id="1_b5nff"]
+[ext_resource type="PackedScene" uid="uid://c8eovgi8jjx6u" path="res://player.tscn" id="1_fegli"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_13g47"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_eryms"]
+sky_material = SubResource("ProceduralSkyMaterial_13g47")
+
+[sub_resource type="Environment" id="Environment_5rvwp"]
+background_mode = 2
+sky = SubResource("Sky_eryms")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sp818"]
+albedo_texture = ExtResource("1_b5nff")
+uv1_scale = Vector3(200, 200, 200)
+
+[sub_resource type="BoxMesh" id="BoxMesh_sedhb"]
+material = SubResource("StandardMaterial3D_sp818")
+size = Vector3(1000, 1, 1000)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_slp3b"]
+points = PackedVector3Array(-500, -0.5, -500, -500, 0.5, -500, 500, -0.5, -500, -500, -0.5, 500, -500, 0.5, 500, 500, 0.5, -500, 500, -0.5, 500, 500, 0.5, 500)
+
+[sub_resource type="BoxMesh" id="BoxMesh_uv80j"]
+size = Vector3(100, 30, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_qicq3"]
+points = PackedVector3Array(50, 15, 0.5, 50, 15, -0.5, -50, 15, 0.5, 50, -15, 0.5, 50, -15, -0.5, -50, 15, -0.5, -50, -15, 0.5, -50, -15, -0.5)
+
+[node name="Node3D" type="Node3D" groups=["world"]]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_5rvwp")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_sedhb")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_slp3b")
+
+[node name="Player" parent="." instance=ExtResource("1_fegli")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5089, 0.5, -3.66518)
+
+[node name="Wall" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.9568, 12.6372, -148.408)
+mesh = SubResource("BoxMesh_uv80j")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_qicq3")
