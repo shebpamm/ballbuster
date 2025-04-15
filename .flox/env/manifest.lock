@@ -9,6 +9,12 @@
           "aarch64-linux",
           "x86_64-linux"
         ]
+      },
+      "steam-run-free": {
+        "pkg-path": "steam-run-free",
+        "systems": [
+          "x86_64-linux"
+        ]
       }
     },
     "hook": {},
@@ -34,13 +40,13 @@
       "description": "Free and Open Source 2D and 3D game engine",
       "install_id": "godot_4_3",
       "license": "MIT",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=c8cd81426f45942bb2906d5ed2fe21d2f19d95b7",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=2631b0b7abcea6e640ce31cd78ea58910d31e650",
       "name": "godot4-4.3-stable",
       "pname": "godot_4_3",
-      "rev": "c8cd81426f45942bb2906d5ed2fe21d2f19d95b7",
-      "rev_count": 780821,
-      "rev_date": "2025-04-08T07:41:42Z",
-      "scrape_date": "2025-04-10T01:27:39.056326Z",
+      "rev": "2631b0b7abcea6e640ce31cd78ea58910d31e650",
+      "rev_count": 782401,
+      "rev_date": "2025-04-12T13:19:24Z",
+      "scrape_date": "2025-04-14T01:28:04.325019Z",
       "stabilities": [
         "unstable"
       ],
@@ -66,13 +72,13 @@
       "description": "Free and Open Source 2D and 3D game engine",
       "install_id": "godot_4_3",
       "license": "MIT",
-      "locked_url": "https://github.com/flox/nixpkgs?rev=c8cd81426f45942bb2906d5ed2fe21d2f19d95b7",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=2631b0b7abcea6e640ce31cd78ea58910d31e650",
       "name": "godot4-4.3-stable",
       "pname": "godot_4_3",
-      "rev": "c8cd81426f45942bb2906d5ed2fe21d2f19d95b7",
-      "rev_count": 780821,
-      "rev_date": "2025-04-08T07:41:42Z",
-      "scrape_date": "2025-04-10T02:01:18.266452Z",
+      "rev": "2631b0b7abcea6e640ce31cd78ea58910d31e650",
+      "rev_count": 782401,
+      "rev_date": "2025-04-12T13:19:24Z",
+      "scrape_date": "2025-04-14T02:01:53.329862Z",
       "stabilities": [
         "unstable"
       ],
@@ -86,6 +92,35 @@
         "debug": "/nix/store/b3dybcfz4l4gb8hib0gypzi0caam0yn8-godot4-4.3-stable-debug",
         "man": "/nix/store/8bngqx0iq01xgjhp93mlb4l6bq4w37qw-godot4-4.3-stable-man",
         "out": "/nix/store/7y6j4gs81dmnpzy1n6zwm7874gklwx37-godot4-4.3-stable"
+      },
+      "system": "x86_64-linux",
+      "group": "toplevel",
+      "priority": 5
+    },
+    {
+      "attr_path": "steam-run-free",
+      "broken": false,
+      "derivation": "/nix/store/279yhh97y6py2q5hwqp2j4dyk438lmf5-steam-run.drv",
+      "description": "Run commands in the same FHS environment that is used for Steam",
+      "install_id": "steam-run-free",
+      "license": "MIT",
+      "locked_url": "https://github.com/flox/nixpkgs?rev=2631b0b7abcea6e640ce31cd78ea58910d31e650",
+      "name": "steam-run",
+      "pname": "steam-run-free",
+      "rev": "2631b0b7abcea6e640ce31cd78ea58910d31e650",
+      "rev_count": 782401,
+      "rev_date": "2025-04-12T13:19:24Z",
+      "scrape_date": "2025-04-14T02:03:03.510286Z",
+      "stabilities": [
+        "unstable"
+      ],
+      "unfree": false,
+      "version": "steam-run",
+      "outputs_to_install": [
+        "out"
+      ],
+      "outputs": {
+        "out": "/nix/store/y7m2qyz06jw3n6arzrlcw545w32j6myd-steam-run"
       },
       "system": "x86_64-linux",
       "group": "toplevel",

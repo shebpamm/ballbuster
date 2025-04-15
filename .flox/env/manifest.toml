@@ -17,6 +17,8 @@ version = 1
 [install]
 godot_4_3.pkg-path = "godot_4_3"
 godot_4_3.systems = ["aarch64-linux", "x86_64-linux"]
+steam-run-free.pkg-path = "steam-run-free"
+steam-run-free.systems = ["x86_64-linux"]
 # gum.pkg-path = "gum"
 # gum.version = "^0.14.5"
 
